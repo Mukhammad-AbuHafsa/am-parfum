@@ -1,0 +1,26 @@
+name: Unpack modular site
+
+on:
+  push:
+    paths:
+      - 'AM-PARFUM-модульный-проект.zip'
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unpack project files
+        run: |
+          unzip -o "AM-PARFUM-модульный-проект.zip" -d .
+          rm "AM-PARFUM-модульный-проект.zip"
+      - name: Commit modular structure
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Развёртывание модульной структуры проекта"
+          git push
