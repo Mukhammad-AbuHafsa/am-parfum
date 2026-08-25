@@ -15,7 +15,7 @@ function imageFor(product) {
   ].join(' ');
 
   const parameters = new URLSearchParams({
-    th: description,
+    q: description,
     w: '700',
     h: '700',
     c: '7',
@@ -199,6 +199,22 @@ function handleGridClick(event) {
   }
 }
 
+function handleImageError(event) {
+  const image = event.target.closest('.product-card__image');
+
+  if (!image) {
+    return;
+  }
+
+  image.hidden = true;
+
+  const fallback = image.nextElementSibling;
+
+  if (fallback?.classList.contains('product-card__fallback')) {
+    fallback.hidden = false;
+  }
+}
+
 export function initCatalog() {
   ['search', 'gender', 'sort'].forEach((id) => {
     const eventName = id === 'search' ? 'input' : 'change';
@@ -217,6 +233,7 @@ export function initCatalog() {
   });
 
   qs('#grid').addEventListener('click', handleGridClick);
+  qs('#grid').addEventListener('error', handleImageError, true);
 
   renderCatalog();
 }
