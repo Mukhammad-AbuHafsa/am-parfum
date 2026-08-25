@@ -1,0 +1,7 @@
+footer{padding:65px 5vw 35px;border-top:1px solid #292929;display:grid;grid-template-columns:1fr 1fr;gap:25px;color:#888}
+footer>div:last-of-type{display:flex;gap:25px;justify-content:flex-end;color:#ddd}
+footer small{grid-column:1/-1;border-top:1px solid #222;padding-top:25px}
+@media(max-width:700px){
+footer{grid-template-columns:1fr;padding:50px 20px}
+footer>div:last-of-type{justify-content:flex-start;flex-wrap:wrap}
+}

@@ -1,0 +1,11 @@
+.site-header{height:82px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:20;background:rgba(8,8,8,.82);backdrop-filter:blur(18px);border-bottom:1px solid #252525}
+.site-header__brand,.site-footer__brand{display:flex;align-items:center;gap:11px;font-size:12px;letter-spacing:.42em}
+.brand-logo__monogram{font-family:'Cormorant Garamond';font-size:28px;font-weight:700;letter-spacing:-.09em}
+.site-header nav{display:flex;gap:34px;font-size:13px;color:#bbb}
+.site-header nav a:hover{color:white}
+@media(max-width:1000px){
+.site-header nav{display:none}
+}
+@media(max-width:700px){
+.site-header{padding:0 18px}
+}

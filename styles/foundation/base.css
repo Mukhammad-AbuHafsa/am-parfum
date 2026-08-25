@@ -1,0 +1,5 @@
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#080808;color:#f5f3ee;font-family:Manrope,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}

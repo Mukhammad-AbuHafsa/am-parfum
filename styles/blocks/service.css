@@ -1,0 +1,11 @@
+.section-heading h2,.service h2,.delivery h2{font-size:58px;margin:10px 0}
+.service{padding:110px 7vw;background:#eee;color:#111}
+.service__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#bbb;margin-top:55px}
+.service article{background:#eee;padding:35px}
+.service article>b{font-family:'Cormorant Garamond';font-size:38px;color:#999}
+.service h3{font-family:'Cormorant Garamond';font-size:29px}
+.service p{color:#555;line-height:1.7}
+@media(max-width:700px){
+.service,.delivery{padding:75px 20px}
+.service__grid{grid-template-columns:1fr}
+}
