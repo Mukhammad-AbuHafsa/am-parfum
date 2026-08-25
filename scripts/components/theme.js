@@ -1,11 +1,45 @@
 import { qs } from '../core/dom.js';
+
+const STORAGE_KEY = 'amTheme';
+
+function readSavedTheme() {
+  try {
+    return localStorage.getItem(STORAGE_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function saveTheme(theme) {
+  try {
+    localStorage.setItem(STORAGE_KEY, theme);
+  } catch {
+    // The theme still works when private browsing blocks storage.
+  }
+}
+
 export function initTheme() {
   const button = qs('#themeToggle');
-  if (!button) return;
-  const icon = button.querySelector('span:first-child');
-  const label = button.querySelector('span:last-child');
-  const apply = dark => { document.body.classList.toggle('dark', dark); icon.textContent = dark ? '☀' : '☾'; label.textContent = dark ? 'Дневная' : 'Ночная'; };
-  let dark = false; try { dark = localStorage.getItem('amTheme') === 'dark'; } catch {}
-  apply(dark);
-  button.addEventListener('click', () => { dark = !document.body.classList.contains('dark'); apply(dark); try { localStorage.setItem('amTheme', dark ? 'dark' : 'light'); } catch {} });
+
+  if (!button) {
+    return;
+  }
+
+  const icon = button.querySelector('.theme-toggle__icon');
+  const label = button.querySelector('.theme-toggle__label');
+
+  function applyTheme(isDark) {
+    document.body.classList.toggle('dark', isDark);
+    icon.textContent = isDark ? '☀' : '☾';
+    label.textContent = isDark ? 'Дневная' : 'Ночная';
+  }
+
+  applyTheme(readSavedTheme() === 'dark');
+
+  button.addEventListener('click', () => {
+    const isDark = !document.body.classList.contains('dark');
+
+    applyTheme(isDark);
+    saveTheme(isDark ? 'dark' : 'light');
+  });
 }

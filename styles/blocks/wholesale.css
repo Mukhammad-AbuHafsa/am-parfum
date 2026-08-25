@@ -1,3 +1,283 @@
-.wholesale{padding:110px 7vw;background:#1b1916;color:#f5f1e9;display:grid;grid-template-columns:1.15fr .85fr;gap:8vw;align-items:center}.wholesale h2{font-family:'Cormorant Garamond';font-size:clamp(54px,6vw,82px);line-height:.92;margin:16px 0 26px;font-weight:600}.wholesale h2 em{font-weight:500;color:#bda97f}.wholesale__content>p:not(.eyebrow){color:#c6c0b6;line-height:1.8;max-width:670px}.wholesale__actions{display:flex;gap:12px;margin-top:32px}.wholesale .btn--ghost{color:#fff;border-color:#6f675b}.wholesale__facts{display:grid;gap:1px;background:#4a4339}.wholesale__facts article{background:#25221e;padding:34px;display:flex;flex-direction:column;gap:7px}.wholesale__facts b{font-family:'Cormorant Garamond';font-size:37px}.wholesale__facts span{color:#aaa195;font-size:11px;text-transform:uppercase;letter-spacing:.14em}body.dark .wholesale{background:#151515}body.dark .wholesale__facts{background:#333}body.dark .wholesale__facts article{background:#202020}@media(max-width:800px){.wholesale{grid-template-columns:1fr;padding:80px 20px}.wholesale__actions{flex-direction:column}.wholesale h2{font-size:56px}}
+.wholesale {
+  padding:110px 7vw;
+  background:#1b1916;
+  color:#f5f1e9;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:8vw;
+  align-items:center
+}
 
-.wholesale__catalog{grid-column:1/-1;margin-top:22px;border-top:1px solid #50483d;padding-top:54px}.wholesale__heading{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:24px}.wholesale__heading h3{font-family:'Cormorant Garamond';font-size:clamp(38px,4vw,54px);margin:7px 0 0}.wholesale__heading>p{color:#aaa195;font-size:12px}.wholesale__tools{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:13px}.wholesale__search{display:flex;flex-direction:column;gap:7px;width:min(480px,100%)}.wholesale__search span{font-size:10px;text-transform:uppercase;letter-spacing:.17em;color:#aaa195}.wholesale__search input{height:48px;background:#25221e;border:1px solid #514a40;color:#fff;padding:0 15px;outline:none;transition:border-color .25s ease,background-color .25s ease}.wholesale__search input:focus{border-color:#bda97f;background:#2d2924}.wholesale__search input::placeholder{color:#827a70}.wholesale__minimum{border:1px solid #6c604d;color:#dbcba9;padding:10px 14px;font-size:11px;letter-spacing:.06em}.wholesale-table{border:1px solid #4b443a;background:#211e1a}.wholesale-table__header,.wholesale-table__row{display:grid;grid-template-columns:minmax(0,1fr) 180px;align-items:center}.wholesale-table__header{min-height:46px;padding:0 20px;background:#b99a5b;color:#17130f;font-size:10px;text-transform:uppercase;letter-spacing:.15em}.wholesale-table__header span:last-child{text-align:right}.wholesale-table__body{max-height:590px;overflow:auto;scrollbar-color:#8d7750 #24211d;scrollbar-width:thin}.wholesale-table__row{min-height:49px;padding:8px 20px;border-top:1px solid #38332d;transition:background-color .2s ease}.wholesale-table__row:nth-child(even){background:#26221e}.wholesale-table__row:hover{background:#332d25}.wholesale-table__name{font-size:13px;line-height:1.35;color:#eee9df;padding-right:18px}.wholesale-table__price{text-align:right;color:#d9c18e;font-family:'Cormorant Garamond';font-size:19px;font-weight:600}.wholesale__empty{text-align:center;color:#aaa195;padding:28px;border:1px solid #4b443a;border-top:0;margin:0}.wholesale-table__number{display:inline-block;min-width:32px;margin-right:8px;color:#797166;font-size:10px;font-family:Manrope,Arial,sans-serif}@media(max-width:700px){.wholesale__heading,.wholesale__tools{align-items:stretch;flex-direction:column}.wholesale__heading>p{margin:0}.wholesale__minimum{align-self:flex-start}.wholesale-table__header,.wholesale-table__row{grid-template-columns:minmax(0,1fr) 108px;padding-left:12px;padding-right:12px}.wholesale-table__body{max-height:520px}.wholesale-table__price{font-size:17px}.wholesale-table__number{min-width:25px;margin-right:4px}}
+.wholesale h2 {
+  font-family:'Cormorant Garamond';
+  font-size:clamp(54px,6vw,82px);
+  line-height:.92;
+  margin:16px 0 26px;
+  font-weight:600
+}
+
+.wholesale h2 em {
+  font-weight:500;
+  color:#bda97f
+}
+
+.wholesale__content>p:not(.eyebrow) {
+  color:#c6c0b6;
+  line-height:1.8;
+  max-width:670px
+}
+
+.wholesale__actions {
+  display:flex;
+  gap:12px;
+  margin-top:32px
+}
+
+.wholesale .btn--ghost {
+  color:#fff;
+  border-color:#6f675b
+}
+
+.wholesale__facts {
+  display:grid;
+  gap:1px;
+  background:#4a4339
+}
+
+.wholesale__facts article {
+  background:#25221e;
+  padding:34px;
+  display:flex;
+  flex-direction:column;
+  gap:7px
+}
+
+.wholesale__facts b {
+  font-family:'Cormorant Garamond';
+  font-size:37px
+}
+
+.wholesale__facts span {
+  color:#aaa195;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.14em
+}
+
+body.dark .wholesale {
+  background:#151515
+}
+
+body.dark .wholesale__facts {
+  background:#333
+}
+
+body.dark .wholesale__facts article {
+  background:#202020
+}
+
+@media(max-width:800px) {
+  .wholesale {
+    grid-template-columns:1fr;
+    padding:80px 20px
+  }
+
+  .wholesale__actions {
+    flex-direction:column
+  }
+
+  .wholesale h2 {
+    font-size:56px
+  }
+
+}
+
+.wholesale__catalog {
+  grid-column:1/-1;
+  margin-top:22px;
+  border-top:1px solid #50483d;
+  padding-top:54px
+}
+
+.wholesale__heading {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:25px;
+  margin-bottom:24px
+}
+
+.wholesale__heading h3 {
+  font-family:'Cormorant Garamond';
+  font-size:clamp(38px,4vw,54px);
+  margin:7px 0 0
+}
+
+.wholesale__heading>p {
+  color:#aaa195;
+  font-size:12px
+}
+
+.wholesale__tools {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:13px
+}
+
+.wholesale__search {
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  width:min(480px,100%)
+}
+
+.wholesale__search span {
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.17em;
+  color:#aaa195
+}
+
+.wholesale__search input {
+  height:48px;
+  background:#25221e;
+  border:1px solid #514a40;
+  color:#fff;
+  padding:0 15px;
+  outline:none;
+  transition:border-color .25s ease,background-color .25s ease
+}
+
+.wholesale__search input:focus {
+  border-color:#bda97f;
+  background:#2d2924
+}
+
+.wholesale__search input::placeholder {
+  color:#827a70
+}
+
+.wholesale__minimum {
+  border:1px solid #6c604d;
+  color:#dbcba9;
+  padding:10px 14px;
+  font-size:11px;
+  letter-spacing:.06em
+}
+
+.wholesale-table {
+  border:1px solid #4b443a;
+  background:#211e1a
+}
+
+.wholesale-table__header,.wholesale-table__row {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 180px;
+  align-items:center
+}
+
+.wholesale-table__header {
+  min-height:46px;
+  padding:0 20px;
+  background:#b99a5b;
+  color:#17130f;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.15em
+}
+
+.wholesale-table__header span:last-child {
+  text-align:right
+}
+
+.wholesale-table__body {
+  max-height:590px;
+  overflow:auto;
+  scrollbar-color:#8d7750 #24211d;
+  scrollbar-width:thin
+}
+
+.wholesale-table__row {
+  min-height:49px;
+  padding:8px 20px;
+  border-top:1px solid #38332d;
+  transition:background-color .2s ease
+}
+
+.wholesale-table__row:nth-child(even) {
+  background:#26221e
+}
+
+.wholesale-table__row:hover {
+  background:#332d25
+}
+
+.wholesale-table__name {
+  font-size:13px;
+  line-height:1.35;
+  color:#eee9df;
+  padding-right:18px
+}
+
+.wholesale-table__price {
+  text-align:right;
+  color:#d9c18e;
+  font-family:'Cormorant Garamond';
+  font-size:19px;
+  font-weight:600
+}
+
+.wholesale__empty {
+  text-align:center;
+  color:#aaa195;
+  padding:28px;
+  border:1px solid #4b443a;
+  border-top:0;
+  margin:0
+}
+
+.wholesale-table__number {
+  display:inline-block;
+  min-width:32px;
+  margin-right:8px;
+  color:#797166;
+  font-size:10px;
+  font-family:Manrope,Arial,sans-serif
+}
+
+@media(max-width:700px) {
+  .wholesale__heading,.wholesale__tools {
+    align-items:stretch;
+    flex-direction:column
+  }
+
+  .wholesale__heading>p {
+    margin:0
+  }
+
+  .wholesale__minimum {
+    align-self:flex-start
+  }
+
+  .wholesale-table__header,.wholesale-table__row {
+    grid-template-columns:minmax(0,1fr) 108px;
+    padding-left:12px;
+    padding-right:12px
+  }
+
+  .wholesale-table__body {
+    max-height:520px
+  }
+
+  .wholesale-table__price {
+    font-size:17px
+  }
+
+  .wholesale-table__number {
+    min-width:25px;
+    margin-right:4px
+  }
+
+}

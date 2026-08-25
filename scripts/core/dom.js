@@ -1,2 +1,7 @@
-export const qs = (selector, scope = document) => scope.querySelector(selector);
-export const qsa = (selector, scope = document) => [...scope.querySelectorAll(selector)];
+export function qs(selector, parent = document) {
+  return parent.querySelector(selector);
+}
+
+export function qsa(selector, parent = document) {
+  return [...parent.querySelectorAll(selector)];
+}

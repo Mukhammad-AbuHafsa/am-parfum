@@ -1,78 +1,955 @@
-.product-card{cursor:pointer}.product-card:focus-visible{outline:2px solid #a98b55;outline-offset:3px}.product-modal{position:fixed;inset:0;z-index:95;display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s ease}.product-modal.open{opacity:1;visibility:visible}.product-modal__backdrop{position:absolute;inset:0;background:#0c0a08c7;backdrop-filter:blur(9px)}.product-modal__dialog{position:relative;width:min(980px,100%);max-height:min(760px,92vh);overflow:auto;background:#f8f5ee;color:#1b1814;display:grid;grid-template-columns:.9fr 1.1fr;box-shadow:0 35px 120px #0008;transform:translateY(25px) scale(.97);transition:transform .45s cubic-bezier(.22,1,.36,1)}.product-modal.open .product-modal__dialog{transform:none}.product-modal__close{position:absolute;right:16px;top:13px;z-index:2;width:42px;height:42px;border:1px solid #bbb0a0;background:#f8f5ee;color:#201c17;border-radius:50%;font-size:28px;cursor:pointer}.product-modal__media{min-height:570px;background:#ded8cf}.product-modal__media img{width:100%;height:100%;object-fit:cover}.product-modal__content{padding:clamp(34px,5vw,68px);display:flex;flex-direction:column}.product-modal__content h2{font-family:'Cormorant Garamond';font-size:clamp(43px,5vw,67px);line-height:.95;margin:13px 0 20px}.product-modal__tags{display:flex;flex-wrap:wrap;gap:7px}.product-modal__tags span{border:1px solid #c8bdad;padding:7px 10px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}.product-modal__description{color:#615a51;line-height:1.8;margin:25px 0}.product-modal__info{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #d8d0c5;border-bottom:1px solid #d8d0c5;margin:0 0 25px}.product-modal__info div{padding:16px 0}.product-modal__info dt{font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:#8a8175}.product-modal__info dd{margin:7px 0 0;font-size:13px}.product-modal__disclaimer{font-size:10px;color:#857c71;line-height:1.55;margin:16px 0 0}body.dark .product-modal__dialog{background:#151515;color:#f5f1e9}body.dark .product-modal__close{background:#1e1e1e;color:#fff;border-color:#444}body.dark .product-modal__tags span,body.dark .product-modal__info{border-color:#3e3e3e}body.dark .product-modal__description{color:#aaa}body.dark .product-modal__disclaimer{color:#777}@media(max-width:760px){.product-modal__dialog{grid-template-columns:1fr}.product-modal__media{min-height:300px;max-height:42vh}.product-modal__content{padding:30px 22px}.product-modal__info{grid-template-columns:1fr}.product-modal__close{right:10px;top:10px}}
-
-
-.fragrance-pyramid{margin:25px 0 0;border:1px solid #d2c7b7;background:#f0eae0}.fragrance-pyramid__header{display:flex;align-items:center;justify-content:space-between;padding:13px 15px;border-bottom:1px solid #d2c7b7}.fragrance-pyramid__header h3{font-family:'Cormorant Garamond';font-size:22px;margin:0}.fragrance-pyramid__header span{font-size:8px;text-transform:uppercase;letter-spacing:.16em;color:#857a6c}.fragrance-pyramid__levels{display:grid;grid-template-columns:repeat(3,1fr)}.fragrance-pyramid__levels>div{padding:15px;border-right:1px solid #d2c7b7}.fragrance-pyramid__levels>div:last-child{border-right:0}.fragrance-pyramid__levels small{font-size:8px;text-transform:uppercase;letter-spacing:.13em;color:#8b8174}.fragrance-pyramid__levels p{font-size:11px;line-height:1.55;margin:8px 0 0;color:#4f4941}body.dark .fragrance-pyramid{background:#1e1e1e;border-color:#3d3d3d}body.dark .fragrance-pyramid__header,body.dark .fragrance-pyramid__levels>div{border-color:#3d3d3d}body.dark .fragrance-pyramid__levels p{color:#bbb}@media(max-width:560px){.fragrance-pyramid__levels{grid-template-columns:1fr}.fragrance-pyramid__levels>div{border-right:0;border-bottom:1px solid #d2c7b7}.fragrance-pyramid__levels>div:last-child{border-bottom:0}body.dark .fragrance-pyramid__levels>div{border-bottom-color:#3d3d3d}}
-
-
-.fragrance-pyramid{position:relative;overflow:hidden;margin:27px 0 2px;padding:0 0 18px;border:1px solid #cbbb9f;background:linear-gradient(145deg,#f7f1e7,#e9dfcf);box-shadow:inset 0 1px #fff,0 14px 34px rgba(73,55,29,.09)}.fragrance-pyramid:before{content:'';position:absolute;width:260px;height:260px;right:-120px;top:-130px;border:1px solid rgba(154,126,75,.2);transform:rotate(45deg)}.fragrance-pyramid__header{position:relative;padding:16px 18px;border-bottom:0}.fragrance-pyramid__header:after{content:'';position:absolute;left:18px;right:18px;bottom:0;height:1px;background:linear-gradient(90deg,transparent,#b49a69,transparent)}.fragrance-pyramid__header h3{font-size:25px;letter-spacing:.01em}.fragrance-pyramid__header span{border:1px solid #b9a581;border-radius:99px;padding:5px 8px;color:#74664e;background:#f9f5ee}.fragrance-pyramid__levels{position:relative;display:flex!important;flex-direction:column;align-items:center;gap:5px;padding:17px 15px 0}.fragrance-pyramid__levels .fragrance-pyramid__level{position:relative;min-height:67px;border:0!important;display:grid;grid-template-columns:34px 30px 1fr;align-items:center;padding:11px 17px!important;clip-path:polygon(7% 0,93% 0,100% 100%,0 100%);transition:transform .28s ease,filter .28s ease;box-shadow:none}.fragrance-pyramid__levels .fragrance-pyramid__level:hover{transform:translateY(-2px);filter:brightness(1.035)}.fragrance-pyramid__level--top{width:66%;background:linear-gradient(100deg,#ead7ad,#f7ecd3)}.fragrance-pyramid__level--heart{width:83%;background:linear-gradient(100deg,#d7b97f,#edd8ac)}.fragrance-pyramid__level--base{width:100%;background:linear-gradient(100deg,#a9824b,#c5a36a);color:#fff}.fragrance-pyramid__level i{font-family:'Cormorant Garamond';font-size:18px;font-style:normal;opacity:.47}.fragrance-pyramid__symbol{font-size:16px;color:#7c5d2e}.fragrance-pyramid__level--base .fragrance-pyramid__symbol{color:#fff}.fragrance-pyramid__level section{min-width:0}.fragrance-pyramid__levels .fragrance-pyramid__level small{display:block;font-size:8px;text-transform:uppercase;letter-spacing:.17em;color:#725f42}.fragrance-pyramid__levels .fragrance-pyramid__level p{font-family:'Cormorant Garamond';font-size:15px;line-height:1.25;margin:5px 0 0;color:#2f281f}.fragrance-pyramid__levels .fragrance-pyramid__level--base small,.fragrance-pyramid__levels .fragrance-pyramid__level--base p{color:#fff}.product-modal.open .fragrance-pyramid__level--top{animation:noteRise .5s .12s both}.product-modal.open .fragrance-pyramid__level--heart{animation:noteRise .5s .2s both}.product-modal.open .fragrance-pyramid__level--base{animation:noteRise .5s .28s both}@keyframes noteRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}body.dark .fragrance-pyramid{background:linear-gradient(145deg,#1b1916,#262119);border-color:#584a35;box-shadow:inset 0 1px #373027,0 16px 38px #0005}body.dark .fragrance-pyramid__header span{background:#211d18;border-color:#69583e;color:#c6b28d}body.dark .fragrance-pyramid__level--top{background:linear-gradient(100deg,#51442f,#6a5739)}body.dark .fragrance-pyramid__level--heart{background:linear-gradient(100deg,#705936,#8b7047)}body.dark .fragrance-pyramid__level--base{background:linear-gradient(100deg,#927042,#b08b54)}body.dark .fragrance-pyramid__levels .fragrance-pyramid__level small{color:#e6d5b5}body.dark .fragrance-pyramid__levels .fragrance-pyramid__level p{color:#fff}@media(max-width:560px){.fragrance-pyramid__levels .fragrance-pyramid__level{grid-template-columns:26px 25px 1fr;padding:11px 12px!important}.fragrance-pyramid__level--top{width:76%}.fragrance-pyramid__level--heart{width:88%}.fragrance-pyramid__levels .fragrance-pyramid__level p{font-size:14px}}@media(prefers-reduced-motion:reduce){.product-modal.open .fragrance-pyramid__level{animation:none!important}}
-
-
-/* A&M product view — monochrome, logo-led and fully responsive */
-.product-modal{padding:clamp(12px,3vw,32px)}
-.product-modal__backdrop{background:rgba(0,0,0,.82);backdrop-filter:blur(14px) saturate(.7)}
-.product-modal__dialog{width:min(1120px,calc(100vw - 48px));height:min(820px,calc(100dvh - 48px));max-height:none;overflow:hidden;grid-template-columns:minmax(390px,.92fr) minmax(0,1.08fr);background:#080808!important;color:#fff!important;border:1px solid rgba(255,255,255,.2);border-radius:28px;box-shadow:0 45px 140px rgba(0,0,0,.78),inset 0 0 0 1px rgba(255,255,255,.035)}
-.product-modal__dialog:after{content:'A&M  PARFUM';position:absolute;right:76px;top:25px;color:rgba(255,255,255,.36);font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.28em;pointer-events:none}
-.product-modal__close{right:20px;top:18px;width:42px;height:42px;background:#080808!important;color:#fff!important;border:1px solid rgba(255,255,255,.38)!important;font-weight:200;line-height:37px;transition:background .25s,color .25s,transform .25s}
-.product-modal__close:hover{background:#fff!important;color:#000!important;transform:rotate(90deg)}
-.product-modal__media{position:relative;min-height:0;height:100%;padding:clamp(30px,4vw,58px);display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 43%,#303030 0,#151515 45%,#050505 78%)}
-.product-modal__media:before{content:'A&M';position:absolute;width:min(72%,390px);aspect-ratio:1;border:1px solid rgba(255,255,255,.22);border-radius:50%;display:grid;place-items:center;color:rgba(255,255,255,.07);font-family:'Cormorant Garamond',serif;font-size:clamp(72px,10vw,132px);letter-spacing:-.08em}
-.product-modal__media:after{content:'PARFUM';position:absolute;bottom:25px;color:rgba(255,255,255,.48);font-size:9px;letter-spacing:.52em}
-.product-modal__media img{position:relative;z-index:1;width:100%;height:100%;max-height:650px;object-fit:contain!important;object-position:center;border-radius:18px;background:#eeeae2;box-shadow:0 25px 75px rgba(0,0,0,.55);filter:none}
-.product-modal__content{min-width:0;overflow-y:auto;padding:clamp(68px,6vw,86px) clamp(30px,5vw,72px) 48px;scrollbar-width:thin;scrollbar-color:#555 #111}
-.product-modal__content .eyebrow{color:#bdbdbd;letter-spacing:.22em}
-.product-modal__content h2{font-size:clamp(42px,5vw,70px);line-height:.92;margin:13px 0 22px;color:#fff;overflow-wrap:anywhere}
-.product-modal__tags span{border-color:rgba(255,255,255,.25)!important;color:#d7d7d7;border-radius:999px;padding:8px 12px}
-.product-modal__description{color:#bcbcbc!important;font-size:14px;line-height:1.85}
-.product-modal__info{border-color:rgba(255,255,255,.18)!important}
-.product-modal__info dt{color:#777}.product-modal__info dd{color:#fff}
-.product-modal__content .btn.btn--primary{background:#fff;color:#050505;border-color:#fff;box-shadow:none;justify-content:center;min-height:54px}
-.product-modal__content .btn.btn--primary:hover{background:#d9d9d9;border-color:#d9d9d9}
-.product-modal__disclaimer{color:#717171!important}
-.product-modal__dialog .fragrance-pyramid{border-color:rgba(255,255,255,.18);background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015))}
-.product-modal__dialog .fragrance-pyramid__header{border-color:rgba(255,255,255,.14)}
-.product-modal__dialog .fragrance-pyramid__header h3,.product-modal__dialog .fragrance-pyramid__level p{color:#f3f3f3}
-.product-modal__dialog .fragrance-pyramid__header span,.product-modal__dialog .fragrance-pyramid__level small{color:#9b9b9b}
-.product-modal__dialog .fragrance-pyramid__level{border-color:rgba(255,255,255,.13)}
-.product-modal__dialog .fragrance-pyramid__level i,.product-modal__dialog .fragrance-pyramid__symbol{color:#c6c6c6}
-@media(max-width:1100px){
- .product-modal__dialog{width:min(940px,calc(100vw - 32px));height:min(780px,calc(100dvh - 32px));grid-template-columns:minmax(330px,.82fr) minmax(0,1.18fr);border-radius:24px}
- .product-modal__media{padding:32px}.product-modal__content{padding:66px 34px 40px}
- .catalog__grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.product-card {
+  cursor:pointer
 }
-@media(max-width:820px){
- .product-modal{padding:14px;place-items:center}
- .product-modal__dialog{width:100%;height:calc(100dvh - 28px);grid-template-columns:1fr;grid-template-rows:minmax(280px,42vh) auto;border-radius:22px;overflow-y:auto}
- .product-modal__dialog:after{left:22px;right:auto;top:23px;z-index:3}
- .product-modal__media{height:auto;min-height:280px;padding:50px 42px 34px}
- .product-modal__media img{max-height:34vh;min-height:220px}
- .product-modal__media:after{bottom:14px}
- .product-modal__content{overflow:visible;padding:38px 30px 44px}
- .product-modal__content h2{font-size:clamp(42px,8vw,62px)}
- .catalog__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .catalog-toolbar{grid-template-columns:1fr 1fr}.catalog-toolbar .catalog-toolbar__search{grid-column:1/-1}.catalog-toolbar #reset{grid-column:1/-1}
- .wholesale__catalog{padding:clamp(22px,5vw,40px)}
-}
-@media(max-width:540px){
- .product-modal{padding:0}
- .product-modal__dialog{height:100dvh;width:100vw;border:0;border-radius:0;grid-template-rows:minmax(245px,36vh) auto}
- .product-modal__dialog:after{font-size:10px;left:18px;top:20px}
- .product-modal__close{right:14px;top:12px}
- .product-modal__media{min-height:245px;padding:48px 30px 28px}
- .product-modal__media img{min-height:190px;max-height:29vh;border-radius:12px}
- .product-modal__media:before{width:210px}.product-modal__media:after{display:none}
- .product-modal__content{padding:30px 18px 38px}
- .product-modal__content h2{font-size:42px;margin-bottom:18px}
- .product-modal__info{grid-template-columns:1fr 1fr}.product-modal__info div{padding:14px 4px}.product-modal__info div+div{padding-left:14px;border-left:1px solid rgba(255,255,255,.18)}
- .fragrance-pyramid{margin-left:0;margin-right:0}
- .catalog__grid{grid-template-columns:1fr;gap:20px}.product-card{max-width:430px;margin-inline:auto;width:100%}
- .catalog-toolbar{display:grid;grid-template-columns:1fr}.catalog-toolbar>*{grid-column:1!important;width:100%}
- .section-heading{align-items:flex-start;gap:12px}.section-heading h2{font-size:clamp(40px,13vw,58px)}
- .hero{min-height:auto;padding-top:110px;padding-bottom:58px}.hero h1{font-size:clamp(52px,17vw,78px)}
- .hero__stats{grid-template-columns:1fr 1fr}.wholesale__facts{grid-template-columns:1fr 1fr}
- .wholesale-table__row,.wholesale-table__header{grid-template-columns:minmax(0,1fr) 90px}
-}
-@media(max-width:820px){.wholesale{grid-template-columns:minmax(0,1fr)!important}.wholesale__content,.wholesale__facts,.wholesale__catalog{min-width:0;max-width:100%}.wholesale__heading,.wholesale__tools{min-width:0;flex-wrap:wrap}}
-@media(max-width:540px){html,body{overflow-x:clip}.wholesale__content h2{font-size:clamp(48px,15vw,68px)}.favorites-panel{width:min(100vw,420px);max-width:100%;transform:translateX(100%)}}
-@media(prefers-reduced-motion:reduce){.product-modal__dialog,.product-modal,.product-modal__close{transition:none!important}}
 
-.product-modal__dialog .fragrance-pyramid{background:transparent!important;border:0!important;box-shadow:none!important}.product-modal__dialog .fragrance-pyramid__header{padding-left:0;padding-right:0;background:transparent!important}.product-modal__dialog .fragrance-pyramid__header span{display:none!important}
+.product-card:focus-visible {
+  outline:2px solid #a98b55;
+  outline-offset:3px
+}
+
+.product-modal {
+  position:fixed;
+  inset:0;
+  z-index:95;
+  display:grid;
+  place-items:center;
+  padding:20px;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .35s ease,visibility .35s ease
+}
+
+.product-modal.open {
+  opacity:1;
+  visibility:visible
+}
+
+.product-modal__backdrop {
+  position:absolute;
+  inset:0;
+  background:#0c0a08c7;
+  backdrop-filter:blur(9px)
+}
+
+.product-modal__dialog {
+  position:relative;
+  width:min(980px,100%);
+  max-height:min(760px,92vh);
+  overflow:auto;
+  background:#f8f5ee;
+  color:#1b1814;
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  box-shadow:0 35px 120px #0008;
+  transform:translateY(25px) scale(.97);
+  transition:transform .45s cubic-bezier(.22,1,.36,1)
+}
+
+.product-modal.open .product-modal__dialog {
+  transform:none
+}
+
+.product-modal__close {
+  position:absolute;
+  right:16px;
+  top:13px;
+  z-index:2;
+  width:42px;
+  height:42px;
+  border:1px solid #bbb0a0;
+  background:#f8f5ee;
+  color:#201c17;
+  border-radius:50%;
+  font-size:28px;
+  cursor:pointer
+}
+
+.product-modal__media {
+  min-height:570px;
+  background:#ded8cf
+}
+
+.product-modal__media img {
+  width:100%;
+  height:100%;
+  object-fit:cover
+}
+
+.product-modal__content {
+  padding:clamp(34px,5vw,68px);
+  display:flex;
+  flex-direction:column
+}
+
+.product-modal__content h2 {
+  font-family:'Cormorant Garamond';
+  font-size:clamp(43px,5vw,67px);
+  line-height:.95;
+  margin:13px 0 20px
+}
+
+.product-modal__tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px
+}
+
+.product-modal__tags span {
+  border:1px solid #c8bdad;
+  padding:7px 10px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.1em
+}
+
+.product-modal__description {
+  color:#615a51;
+  line-height:1.8;
+  margin:25px 0
+}
+
+.product-modal__info {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border-top:1px solid #d8d0c5;
+  border-bottom:1px solid #d8d0c5;
+  margin:0 0 25px
+}
+
+.product-modal__info div {
+  padding:16px 0
+}
+
+.product-modal__info dt {
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:#8a8175
+}
+
+.product-modal__info dd {
+  margin:7px 0 0;
+  font-size:13px
+}
+
+.product-modal__disclaimer {
+  font-size:10px;
+  color:#857c71;
+  line-height:1.55;
+  margin:16px 0 0
+}
+
+body.dark .product-modal__dialog {
+  background:#151515;
+  color:#f5f1e9
+}
+
+body.dark .product-modal__close {
+  background:#1e1e1e;
+  color:#fff;
+  border-color:#444
+}
+
+body.dark .product-modal__tags span,body.dark .product-modal__info {
+  border-color:#3e3e3e
+}
+
+body.dark .product-modal__description {
+  color:#aaa
+}
+
+body.dark .product-modal__disclaimer {
+  color:#777
+}
+
+@media(max-width:760px) {
+  .product-modal__dialog {
+    grid-template-columns:1fr
+  }
+
+  .product-modal__media {
+    min-height:300px;
+    max-height:42vh
+  }
+
+  .product-modal__content {
+    padding:30px 22px
+  }
+
+  .product-modal__info {
+    grid-template-columns:1fr
+  }
+
+  .product-modal__close {
+    right:10px;
+    top:10px
+  }
+
+}
+
+.fragrance-pyramid {
+  margin:25px 0 0;
+  border:1px solid #d2c7b7;
+  background:#f0eae0
+}
+
+.fragrance-pyramid__header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:13px 15px;
+  border-bottom:1px solid #d2c7b7
+}
+
+.fragrance-pyramid__header h3 {
+  font-family:'Cormorant Garamond';
+  font-size:22px;
+  margin:0
+}
+
+.fragrance-pyramid__header span {
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  color:#857a6c
+}
+
+.fragrance-pyramid__levels {
+  display:grid;
+  grid-template-columns:repeat(3,1fr)
+}
+
+.fragrance-pyramid__levels>div {
+  padding:15px;
+  border-right:1px solid #d2c7b7
+}
+
+.fragrance-pyramid__levels>div:last-child {
+  border-right:0
+}
+
+.fragrance-pyramid__levels small {
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  color:#8b8174
+}
+
+.fragrance-pyramid__levels p {
+  font-size:11px;
+  line-height:1.55;
+  margin:8px 0 0;
+  color:#4f4941
+}
+
+body.dark .fragrance-pyramid {
+  background:#1e1e1e;
+  border-color:#3d3d3d
+}
+
+body.dark .fragrance-pyramid__header,body.dark .fragrance-pyramid__levels>div {
+  border-color:#3d3d3d
+}
+
+body.dark .fragrance-pyramid__levels p {
+  color:#bbb
+}
+
+@media(max-width:560px) {
+  .fragrance-pyramid__levels {
+    grid-template-columns:1fr
+  }
+
+  .fragrance-pyramid__levels>div {
+    border-right:0;
+    border-bottom:1px solid #d2c7b7
+  }
+
+  .fragrance-pyramid__levels>div:last-child {
+    border-bottom:0
+  }
+
+  body.dark .fragrance-pyramid__levels>div {
+    border-bottom-color:#3d3d3d
+  }
+
+}
+
+.fragrance-pyramid {
+  position:relative;
+  overflow:hidden;
+  margin:27px 0 2px;
+  padding:0 0 18px;
+  border:1px solid #cbbb9f;
+  background:linear-gradient(145deg,#f7f1e7,#e9dfcf);
+  box-shadow:inset 0 1px #fff,0 14px 34px rgba(73,55,29,.09)
+}
+
+.fragrance-pyramid:before {
+  content:'';
+  position:absolute;
+  width:260px;
+  height:260px;
+  right:-120px;
+  top:-130px;
+  border:1px solid rgba(154,126,75,.2);
+  transform:rotate(45deg)
+}
+
+.fragrance-pyramid__header {
+  position:relative;
+  padding:16px 18px;
+  border-bottom:0
+}
+
+.fragrance-pyramid__header:after {
+  content:'';
+  position:absolute;
+  left:18px;
+  right:18px;
+  bottom:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,#b49a69,transparent)
+}
+
+.fragrance-pyramid__header h3 {
+  font-size:25px;
+  letter-spacing:.01em
+}
+
+.fragrance-pyramid__header span {
+  border:1px solid #b9a581;
+  border-radius:99px;
+  padding:5px 8px;
+  color:#74664e;
+  background:#f9f5ee
+}
+
+.fragrance-pyramid__levels {
+  position:relative;
+  display:flex!important;
+  flex-direction:column;
+  align-items:center;
+  gap:5px;
+  padding:17px 15px 0
+}
+
+.fragrance-pyramid__levels .fragrance-pyramid__level {
+  position:relative;
+  min-height:67px;
+  border:0!important;
+  display:grid;
+  grid-template-columns:34px 30px 1fr;
+  align-items:center;
+  padding:11px 17px!important;
+  clip-path:polygon(7% 0,93% 0,100% 100%,0 100%);
+  transition:transform .28s ease,filter .28s ease;
+  box-shadow:none
+}
+
+.fragrance-pyramid__levels .fragrance-pyramid__level:hover {
+  transform:translateY(-2px);
+  filter:brightness(1.035)
+}
+
+.fragrance-pyramid__level--top {
+  width:66%;
+  background:linear-gradient(100deg,#ead7ad,#f7ecd3)
+}
+
+.fragrance-pyramid__level--heart {
+  width:83%;
+  background:linear-gradient(100deg,#d7b97f,#edd8ac)
+}
+
+.fragrance-pyramid__level--base {
+  width:100%;
+  background:linear-gradient(100deg,#a9824b,#c5a36a);
+  color:#fff
+}
+
+.fragrance-pyramid__level i {
+  font-family:'Cormorant Garamond';
+  font-size:18px;
+  font-style:normal;
+  opacity:.47
+}
+
+.fragrance-pyramid__symbol {
+  font-size:16px;
+  color:#7c5d2e
+}
+
+.fragrance-pyramid__level--base .fragrance-pyramid__symbol {
+  color:#fff
+}
+
+.fragrance-pyramid__level section {
+  min-width:0
+}
+
+.fragrance-pyramid__levels .fragrance-pyramid__level small {
+  display:block;
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:.17em;
+  color:#725f42
+}
+
+.fragrance-pyramid__levels .fragrance-pyramid__level p {
+  font-family:'Cormorant Garamond';
+  font-size:15px;
+  line-height:1.25;
+  margin:5px 0 0;
+  color:#2f281f
+}
+
+.fragrance-pyramid__levels .fragrance-pyramid__level--base small,.fragrance-pyramid__levels .fragrance-pyramid__level--base p {
+  color:#fff
+}
+
+.product-modal.open .fragrance-pyramid__level--top {
+  animation:noteRise .5s .12s both
+}
+
+.product-modal.open .fragrance-pyramid__level--heart {
+  animation:noteRise .5s .2s both
+}
+
+.product-modal.open .fragrance-pyramid__level--base {
+  animation:noteRise .5s .28s both
+}
+
+@keyframes noteRise {
+  from {
+    opacity:0;
+    transform:translateY(14px)
+  }
+
+  to {
+    opacity:1;
+    transform:none
+  }
+
+}
+
+body.dark .fragrance-pyramid {
+  background:linear-gradient(145deg,#1b1916,#262119);
+  border-color:#584a35;
+  box-shadow:inset 0 1px #373027,0 16px 38px #0005
+}
+
+body.dark .fragrance-pyramid__header span {
+  background:#211d18;
+  border-color:#69583e;
+  color:#c6b28d
+}
+
+body.dark .fragrance-pyramid__level--top {
+  background:linear-gradient(100deg,#51442f,#6a5739)
+}
+
+body.dark .fragrance-pyramid__level--heart {
+  background:linear-gradient(100deg,#705936,#8b7047)
+}
+
+body.dark .fragrance-pyramid__level--base {
+  background:linear-gradient(100deg,#927042,#b08b54)
+}
+
+body.dark .fragrance-pyramid__levels .fragrance-pyramid__level small {
+  color:#e6d5b5
+}
+
+body.dark .fragrance-pyramid__levels .fragrance-pyramid__level p {
+  color:#fff
+}
+
+@media(max-width:560px) {
+  .fragrance-pyramid__levels .fragrance-pyramid__level {
+    grid-template-columns:26px 25px 1fr;
+    padding:11px 12px!important
+  }
+
+  .fragrance-pyramid__level--top {
+    width:76%
+  }
+
+  .fragrance-pyramid__level--heart {
+    width:88%
+  }
+
+  .fragrance-pyramid__levels .fragrance-pyramid__level p {
+    font-size:14px
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .product-modal.open .fragrance-pyramid__level {
+    animation:none!important
+  }
+
+}
+
+/* A&M product view — monochrome, logo-led and fully responsive */ .product-modal {
+  padding:clamp(12px,3vw,32px)
+}
+
+.product-modal__backdrop {
+  background:rgba(0,0,0,.82);
+  backdrop-filter:blur(14px) saturate(.7)
+}
+
+.product-modal__dialog {
+  width:min(1120px,calc(100vw - 48px));
+  height:min(820px,calc(100dvh - 48px));
+  max-height:none;
+  overflow:hidden;
+  grid-template-columns:minmax(390px,.92fr) minmax(0,1.08fr);
+  background:#080808!important;
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:28px;
+  box-shadow:0 45px 140px rgba(0,0,0,.78),inset 0 0 0 1px rgba(255,255,255,.035)
+}
+
+.product-modal__dialog:after {
+  content:'A&M PARFUM';
+  position:absolute;
+  right:76px;
+  top:25px;
+  color:rgba(255,255,255,.36);
+  font-family:'Cormorant Garamond',serif;
+  font-size:12px;
+  letter-spacing:.28em;
+  pointer-events:none
+}
+
+.product-modal__close {
+  right:20px;
+  top:18px;
+  width:42px;
+  height:42px;
+  background:#080808!important;
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.38)!important;
+  font-weight:200;
+  line-height:37px;
+  transition:background .25s,color .25s,transform .25s
+}
+
+.product-modal__close:hover {
+  background:#fff!important;
+  color:#000!important;
+  transform:rotate(90deg)
+}
+
+.product-modal__media {
+  position:relative;
+  min-height:0;
+  height:100%;
+  padding:clamp(30px,4vw,58px);
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:radial-gradient(circle at 50% 43%,#303030 0,#151515 45%,#050505 78%)
+}
+
+.product-modal__media:before {
+  content:'A&M';
+  position:absolute;
+  width:min(72%,390px);
+  aspect-ratio:1;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:rgba(255,255,255,.07);
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(72px,10vw,132px);
+  letter-spacing:-.08em
+}
+
+.product-modal__media:after {
+  content:'PARFUM';
+  position:absolute;
+  bottom:25px;
+  color:rgba(255,255,255,.48);
+  font-size:9px;
+  letter-spacing:.52em
+}
+
+.product-modal__media img {
+  position:relative;
+  z-index:1;
+  width:100%;
+  height:100%;
+  max-height:650px;
+  object-fit:contain!important;
+  object-position:center;
+  border-radius:18px;
+  background:#eeeae2;
+  box-shadow:0 25px 75px rgba(0,0,0,.55);
+  filter:none
+}
+
+.product-modal__content {
+  min-width:0;
+  overflow-y:auto;
+  padding:clamp(68px,6vw,86px) clamp(30px,5vw,72px) 48px;
+  scrollbar-width:thin;
+  scrollbar-color:#555 #111
+}
+
+.product-modal__content .eyebrow {
+  color:#bdbdbd;
+  letter-spacing:.22em
+}
+
+.product-modal__content h2 {
+  font-size:clamp(42px,5vw,70px);
+  line-height:.92;
+  margin:13px 0 22px;
+  color:#fff;
+  overflow-wrap:anywhere
+}
+
+.product-modal__tags span {
+  border-color:rgba(255,255,255,.25)!important;
+  color:#d7d7d7;
+  border-radius:999px;
+  padding:8px 12px
+}
+
+.product-modal__description {
+  color:#bcbcbc!important;
+  font-size:14px;
+  line-height:1.85
+}
+
+.product-modal__info {
+  border-color:rgba(255,255,255,.18)!important
+}
+
+.product-modal__info dt {
+  color:#777
+}
+
+.product-modal__info dd {
+  color:#fff
+}
+
+.product-modal__content .btn.btn--primary {
+  background:#fff;
+  color:#050505;
+  border-color:#fff;
+  box-shadow:none;
+  justify-content:center;
+  min-height:54px
+}
+
+.product-modal__content .btn.btn--primary:hover {
+  background:#d9d9d9;
+  border-color:#d9d9d9
+}
+
+.product-modal__disclaimer {
+  color:#717171!important
+}
+
+.product-modal__dialog .fragrance-pyramid {
+  border-color:rgba(255,255,255,.18);
+  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015))
+}
+
+.product-modal__dialog .fragrance-pyramid__header {
+  border-color:rgba(255,255,255,.14)
+}
+
+.product-modal__dialog .fragrance-pyramid__header h3,.product-modal__dialog .fragrance-pyramid__level p {
+  color:#f3f3f3
+}
+
+.product-modal__dialog .fragrance-pyramid__header span,.product-modal__dialog .fragrance-pyramid__level small {
+  color:#9b9b9b
+}
+
+.product-modal__dialog .fragrance-pyramid__level {
+  border-color:rgba(255,255,255,.13)
+}
+
+.product-modal__dialog .fragrance-pyramid__level i,.product-modal__dialog .fragrance-pyramid__symbol {
+  color:#c6c6c6
+}
+
+@media(max-width:1100px) {
+  .product-modal__dialog {
+    width:min(940px,calc(100vw - 32px));
+    height:min(780px,calc(100dvh - 32px));
+    grid-template-columns:minmax(330px,.82fr) minmax(0,1.18fr);
+    border-radius:24px
+  }
+
+  .product-modal__media {
+    padding:32px
+  }
+
+  .product-modal__content {
+    padding:66px 34px 40px
+  }
+
+  .catalog__grid {
+    grid-template-columns:repeat(3,minmax(0,1fr))
+  }
+
+}
+
+@media(max-width:820px) {
+  .product-modal {
+    padding:14px;
+    place-items:center
+  }
+
+  .product-modal__dialog {
+    width:100%;
+    height:calc(100dvh - 28px);
+    grid-template-columns:1fr;
+    grid-template-rows:minmax(280px,42vh) auto;
+    border-radius:22px;
+    overflow-y:auto
+  }
+
+  .product-modal__dialog:after {
+    left:22px;
+    right:auto;
+    top:23px;
+    z-index:3
+  }
+
+  .product-modal__media {
+    height:auto;
+    min-height:280px;
+    padding:50px 42px 34px
+  }
+
+  .product-modal__media img {
+    max-height:34vh;
+    min-height:220px
+  }
+
+  .product-modal__media:after {
+    bottom:14px
+  }
+
+  .product-modal__content {
+    overflow:visible;
+    padding:38px 30px 44px
+  }
+
+  .product-modal__content h2 {
+    font-size:clamp(42px,8vw,62px)
+  }
+
+  .catalog__grid {
+    grid-template-columns:repeat(2,minmax(0,1fr))
+  }
+
+  .catalog-toolbar {
+    grid-template-columns:1fr 1fr
+  }
+
+  .catalog-toolbar .catalog-toolbar__search {
+    grid-column:1/-1
+  }
+
+  .catalog-toolbar #reset {
+    grid-column:1/-1
+  }
+
+  .wholesale__catalog {
+    padding:clamp(22px,5vw,40px)
+  }
+
+}
+
+@media(max-width:540px) {
+  .product-modal {
+    padding:0
+  }
+
+  .product-modal__dialog {
+    height:100dvh;
+    width:100vw;
+    border:0;
+    border-radius:0;
+    grid-template-rows:minmax(245px,36vh) auto
+  }
+
+  .product-modal__dialog:after {
+    font-size:10px;
+    left:18px;
+    top:20px
+  }
+
+  .product-modal__close {
+    right:14px;
+    top:12px
+  }
+
+  .product-modal__media {
+    min-height:245px;
+    padding:48px 30px 28px
+  }
+
+  .product-modal__media img {
+    min-height:190px;
+    max-height:29vh;
+    border-radius:12px
+  }
+
+  .product-modal__media:before {
+    width:210px
+  }
+
+  .product-modal__media:after {
+    display:none
+  }
+
+  .product-modal__content {
+    padding:30px 18px 38px
+  }
+
+  .product-modal__content h2 {
+    font-size:42px;
+    margin-bottom:18px
+  }
+
+  .product-modal__info {
+    grid-template-columns:1fr 1fr
+  }
+
+  .product-modal__info div {
+    padding:14px 4px
+  }
+
+  .product-modal__info div+div {
+    padding-left:14px;
+    border-left:1px solid rgba(255,255,255,.18)
+  }
+
+  .fragrance-pyramid {
+    margin-left:0;
+    margin-right:0
+  }
+
+  .catalog__grid {
+    grid-template-columns:1fr;
+    gap:20px
+  }
+
+  .product-card {
+    max-width:430px;
+    margin-inline:auto;
+    width:100%
+  }
+
+  .catalog-toolbar {
+    display:grid;
+    grid-template-columns:1fr
+  }
+
+  .catalog-toolbar>* {
+    grid-column:1!important;
+    width:100%
+  }
+
+  .section-heading {
+    align-items:flex-start;
+    gap:12px
+  }
+
+  .section-heading h2 {
+    font-size:clamp(40px,13vw,58px)
+  }
+
+  .hero {
+    min-height:auto;
+    padding-top:110px;
+    padding-bottom:58px
+  }
+
+  .hero h1 {
+    font-size:clamp(52px,17vw,78px)
+  }
+
+  .hero__stats {
+    grid-template-columns:1fr 1fr
+  }
+
+  .wholesale__facts {
+    grid-template-columns:1fr 1fr
+  }
+
+  .wholesale-table__row,.wholesale-table__header {
+    grid-template-columns:minmax(0,1fr) 90px
+  }
+
+}
+
+@media(max-width:820px) {
+  .wholesale {
+    grid-template-columns:minmax(0,1fr)!important
+  }
+
+  .wholesale__content,.wholesale__facts,.wholesale__catalog {
+    min-width:0;
+    max-width:100%
+  }
+
+  .wholesale__heading,.wholesale__tools {
+    min-width:0;
+    flex-wrap:wrap
+  }
+
+}
+
+@media(max-width:540px) {
+  html,body {
+    overflow-x:clip
+  }
+
+  .wholesale__content h2 {
+    font-size:clamp(48px,15vw,68px)
+  }
+
+  .favorites-panel {
+    width:min(100vw,420px);
+    max-width:100%;
+    transform:translateX(100%)
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .product-modal__dialog,.product-modal,.product-modal__close {
+    transition:none!important
+  }
+
+}
+
+.product-modal__dialog .fragrance-pyramid {
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important
+}
+
+.product-modal__dialog .fragrance-pyramid__header {
+  padding-left:0;
+  padding-right:0;
+  background:transparent!important
+}
+
+.product-modal__dialog .fragrance-pyramid__header span {
+  display:none!important
+}
